@@ -21,7 +21,7 @@ CREATE TABLE `item` (
     item_id INT NOT NULL AUTO_INCREMENT,
     item_name VARCHAR(64) NOT NULL,
     item_category INT NOT NULL,
-    item_price REAL NOT NULL,
+    item_price DECIMAL(3, 2) NOT NULL,
     PRIMARY KEY (item_id)
 );
 
@@ -36,7 +36,7 @@ INSERT INTO `item` (item_name, item_category, item_price) VALUES ('Hat', 2, 1.0)
 
 UPDATE `item` SET item_price = 3.5 WHERE item_id = 1;
 
-UPDATE `item` SET item_price = (item_price + item_price / 10);
+UPDATE `item` SET item_price = item_price * 1.1;
 
 DELETE FROM `item` WHERE item_id = 2;
 
