@@ -33,6 +33,7 @@ INSERT INTO `item` (item_name, item_category, item_price) VALUES
     ('Scarf', 3, 1.,),
     ('Cap', 2, 1.0),
     ('Hat', 2, 1.0);
+);
 
 UPDATE `item` SET item_price = 3.5 WHERE item_id = 1;
 
