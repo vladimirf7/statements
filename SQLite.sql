@@ -5,9 +5,9 @@ N/A
 N/A
 
 CREATE TABLE "category" (
-    category_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    category_name VARCHAR(64) NOT NULL
-);
+    category_id INTEGER AUTOINCREMENT,
+    category_name VARCHAR(64) NOT NULL,
+    PRIMARY KEY(category_id));
 
 INSERT INTO "category" (category_name) VALUES ("Footwear");
 INSERT INTO "category" (category_name) VALUES ("Headwear");
@@ -17,8 +17,7 @@ CREATE TABLE "item" (
     item_id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_name VARCHAR(64) NOT NULL,
     item_category INT NOT NULL,
-    item_price REAL NOT NULL
-);
+    item_price INT NOT NULL);
 
 INSERT INTO "item" (item_name, item_category, item_price) VALUES ("Sneakers", 1, 1.0);
 INSERT INTO "item" (item_name, item_category, item_price) VALUES ("Loafers", 1, 1.0);
@@ -31,7 +30,7 @@ INSERT INTO "item" (item_name, item_category, item_price) VALUES ("Hat", 2, 1.0)
 
 UPDATE "item" SET item_price = 3.5 WHERE item_id = 1;
 
-UPDATE "item" SET item_price = (item_price + item_price / 10);
+UPDATE "item" SET item_price = item_price * 1.1;
 
 DELETE FROM "item" WHERE item_id = 2;
 
